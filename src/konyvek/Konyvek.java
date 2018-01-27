@@ -39,7 +39,10 @@ public class Konyvek {
                     ab.uj(szerzo, cim, eredeti, ev);
                     break;
                 case '3':
-                    
+                    System.out.print("Törlwndő könyv azonsítója: ");
+                    int id = bill.nextInt();
+                    bill.nextLine();
+                    ab.torol(id);3
                     break;
                 default:
                     tovabb = false;

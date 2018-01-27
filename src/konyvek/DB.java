@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -59,6 +61,16 @@ public class DB {
             int sorok = parancs.executeUpdate(s);
         } catch (SQLException ex) {
             System.out.println("" + ex);   
+        }
+    }
+    
+    public void torol(int id) {
+        String s = "DELETE FROM adatok WHERE ID=" + id + ";";
+        try {
+            int sorok = parancs.executeUpdate(s);
+            System.out.println(sorok + " sor törölve.");
+        } catch (SQLException ex) {
+            System.out.println("" + ex);
         }
     }
 }
