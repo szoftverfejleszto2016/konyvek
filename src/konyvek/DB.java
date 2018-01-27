@@ -50,4 +50,15 @@ public class DB {
             System.out.println("" + ex);
         }
     }
+    
+    public void uj(String szerzo, String cim, String eredeti, int ev) {
+        String s = "INSERT INTO adatok (szerzo,cim,eredeti,ev) VALUES ('" +
+                   szerzo + "','" + cim + "','" +
+                   eredeti + "'," + ev + ");";
+        try {
+            int sorok = parancs.executeUpdate(s);
+        } catch (SQLException ex) {
+            System.out.println("" + ex);   
+        }
+    }
 }
